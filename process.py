@@ -1,6 +1,7 @@
 #!/bin/python
 # -*- coding: utf-8 -*-
 # post process script for adding comments on html files
+import re
 import sys
 
 
@@ -56,9 +57,33 @@ comment = '''
 <div id="comment-thread"></div>
 '''
 
-content = content.replace('你认识我吗？给我发表评价吧<span class="ffc">.</span></div>', '你认识我吗？给我发表评价吧<span class="ffc">.</span></div>' + comment)
+# The font class name (e.g. ffb, ffc) depends on how many fonts pdf2htmlEX
+# extracts from the PDF, so match any of them instead of hard-coding one.
+def inject(sentence, content):
+    pattern = re.compile(re.escape(sentence) + '<span class="ff[a-z0-9]+">\\.</span></div>')
 
-content = content.replace('Do you know me? Please comment on me<span class="ffc">.</span></div>', '你认识我吗？给我发表评价吧<span class="ffc">.</span></div>' + comment)
+    def repl(m):
+        return '你认识我吗？给我发表评价吧' + m.group(0)[len(sentence):] + comment
+
+    return pattern.sub(repl, content)
+
+content = inject('你认识我吗？给我发表评价吧', content)
+content = inject('Do you know me? Please comment on me', content)
+
+# The English sentence is split into one span per word by pdf2htmlEX, so match
+# the whole line (up to the closing </div>) instead of a single contiguous run.
+def inject_en(content):
+    anchor = content.find('<div id="page-container">')
+    if anchor < 0:
+        return content
+    head, tail = content[:anchor], content[anchor:]
+    pattern = re.compile(r'>Do(?:(?!</div>)[\s\S])*?me<span class="ff[a-z0-9]+">\.</span></div>')
+    match = pattern.search(tail)
+    if match:
+        tail = tail[:match.end()] + comment + tail[match.end():]
+    return head + tail
+
+content = inject_en(content)
 
 with open(source, 'w') as f:
     f.write(content)
