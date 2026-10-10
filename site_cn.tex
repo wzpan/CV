@@ -15,12 +15,24 @@
 \usepackage[english]{babel}
 \linespread{0.9}
 
-\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti
-  Std}]{Adobe Song Std}
-\setCJKsansfont{YaHei Consolas Hybrid}
-\setCJKmonofont{Adobe Kaiti Std}
+\IfFontExistsTF{Adobe Song Std}{%
+  \setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti
+    Std}]{Adobe Song Std}%
+}{%
+  \setCJKmainfont[BoldFont={Heiti SC},ItalicFont={Songti SC}]{Songti SC}%
+}
+\IfFontExistsTF{YaHei Consolas Hybrid}{%
+  \setCJKsansfont{YaHei Consolas Hybrid}%
+}{%
+  \setCJKsansfont{Microsoft YaHei}%
+}
+\IfFontExistsTF{Adobe Kaiti Std}{%
+  \setCJKmonofont{Adobe Kaiti Std}%
+}{%
+  \setCJKmonofont{Songti SC}%
+}
 
-\title{Weizhou Pan, 高级工程师}
+\title{Weizhou Pan, 腾讯技术专家}
 \address{\href{http://tencent.com}{腾讯公司}}{}
 \extrainfo{\octocat~\url{http://github.com/wzpan}\\
 \linkedin~\httplink{www.linkedin.com/in/hahack}%

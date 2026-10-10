@@ -15,26 +15,45 @@
 
 \section{Skills}
 
-\cvcomputer{Languages}{Python, C/C++, Java, Shell/Bash, ECMAScript}
+\cvcomputer{Languages}{Vibe Coding, Python, C/C++, Java, Shell/Bash, ECMAScript}
            {Operating Systems}{Linux, Windows, Mac}
 \cvcomputer{English Proficiency}{CET6(513)}
-           {Development Tools}{Emacs, Android Studio, Git, Makefile, gdb}
+           {Development Tools}{Codex, Claude Code, Emacs, Android Studio, Git, Makefile, gdb}
 \cvcomputer{Documentation}{\LaTeX{}, Doxygen, Markdown}
            {Unit Test}{minunit, nose, doctest}
+\cvcomputer{Tech Stack}{Android, Cocos, Unity, React}
+           {AI}{Agent, RAG, fine-tuning, eval loop}
 
 \section{Experience}
 
 \subsection{Career Experience}
 
-\tlcventry{2017}{0}{\href{http://tencent.com}{Tencent\texttrademark}}{Team Leader}{}{}
+\tlcventry{2017}{0}{\href{http://tencent.com}{Tencent\texttrademark}}{Tech Expert / Lead of Algorithm Group I}{}{}
 {
   \begin{tightitemize}%
-  \item Team leader of Online Education Department, CSIG, Tencent.
-  \item Core developer of Tencent \href{https://abcmouse.qq.com}{ABCmouse} and \href{https://qrobot.qq.com/}{Qrobot}.
-  \item Speaker of \href{https://www.infoq.cn/article/QXiWs69g24PMk0ldg1to}{GMTC 2018}.
+  \item Tech owner of \href{https://qrobot.qq.com/}{Qrobot} (2nd gen), Tencent ABCmouse,
+    QQ Mini Programs, QQ Bots and multiple overseas projects (M8, M8 Lord, M9, W, \textsl{etc.});
+    currently algorithm owner of the XiaoQ AI assistant, owner of AI scenario exploration in
+    QQ Technology Committee, and lead of Algorithm Group I --- managing 7 algorithm and 6 engineering members.
+  \item Tech owner of \textsl{QPilot}, QQ's AI Agent platform --- algorithms, architecture,
+    product and operations; built v1.0 from scratch with a 5-person team; now QQ's one-stop AI foundation.
+  \item Self-developed the QPilot model family: \textbf{funcall} tool-calling model (CoT + SFT + DPO),
+    single-turn accuracy 87.22\%$\rightarrow$95.49\% and multi-turn 65.31\%$\rightarrow$90.81\% on business benchmarks;
+    \textbf{wiki} knowledge-base Q\&A (the earliest in-house iWiki RAG solution), pass rate 62\%$\rightarrow$98\%,
+    480k+ knowledge-base Q\&A and 2,890 derived assistants; \textbf{code} Chinese coding model,
+    incremental pre-training brought ArkTS (HarmonyOS) completion to SOTA and lifted AICR review
+    positive-feedback rate 8.55\%$\rightarrow$49.85\% across 600+ projects and 610k CR tasks.
+  \item Designed the Ops architecture of ``multiple creation views + one unified API'' to avoid
+    experience breakage across models: 270M+ API calls in 2024, covering 845 departments /
+    2,674 teams with 6,500+ public agents.
+  \item 17 patents, 75 KM articles and 428 iWiki docs, with KM technical influence over 99\%; Tencent Excellent R\&D Award,
+    Domain Outstanding Project Award and Technical Influence Award.
+  \item Speaker of \href{https://www.infoq.cn/article/QXiWs69g24PMk0ldg1to}{GMTC 2018};
+    lecturer of 8 Tencent Class courses and member of
+    the Tencent Class ``Xinxuan'' course-rating expert panel (client-side channel owner).
   \end{tightitemize}}
 
-\tlcventry{2015}{0}{\href{http://www.pingan.com/}{Pingan\texttrademark}}{Senior Android Developer}{}{}
+\tlcventry{2017}{2015}{\href{http://www.pingan.com/}{Pingan\texttrademark}}{Senior Android Developer}{}{}
 {
 \begin{tightitemize}%
  \item Core developer of \textsl{Hyperion}, a cross-platform mobile developing framework.
@@ -52,9 +71,11 @@
    watcher, flow analyzer, \textsl{etc.}
  \end{tightitemize}}
 
+\newpage
+
 \subsection{Scientific Experience}
 
-\tlcventry{2013}{2012}{\href{http://www.siat.ac.cn/}{Shenzhen
+\tlcventry{2013}{2009}{\href{http://www.siat.ac.cn/}{Shenzhen
     Institute of Advanced Technology}}{Intern Student}{}{}
 {Doing scientific research.
 \begin{tightitemize}%
@@ -63,14 +84,27 @@
  \item Gained intern student scholarships. 
  \end{tightitemize}}
 
+\subsection{Community Experience}
+
+\tlcventry{2021}{2018}{\href{https://www.cocos.com/}{Cocos}}{Community KOL / Core PMC}{}{}
+{
+  \begin{tightitemize}%
+  \item Coordinated multiple in-house teams to build \href{https://github.com/cocos/cocomat}{cocomat},
+    a high-performance, reusable Cocos Creator component framework shared across businesses, and
+    open-sourced it to the Cocos community.
+  \item Fixed a JSB cross-layer memory leak upstream in Cocos (PR \#1178).
+  \item Cocos community KOL \& 10th-anniversary honorary speaker; speaker of Cocos Developer Salon 2020.
+  \item Core PMC of Tencent Cocos Oteam.
+  \end{tightitemize}}
+
 \subsection{Open-source Experience}
 
 \tlcventry{2017}{0}{\href{http://github.com/wzpan/wukong-robot}{wukong-robot}}{Author}{}{}%
   {
 \begin{itemize}
-\item \textbf{Abstract}: An Amazon Echo like AI speaker named wukong-robot. It can works on Raspberry Pi and many other platforms. The goal is to provide a Chinese AI robot that works out of box.
-\item \textbf{Features}: Highly modularize and extensible. You can switch ASR engine and TTS engine simply by modify the config file, and you can easily write your own skills to extend the ability of the robot. Allows controlling you smart devices with HomeAssistant. A backend server is also provided, with open restful APIs.
-\item \textbf{Stats}: 2,000+ stars, 500+ forks.
+\item \textbf{Abstract}: A simple, flexible and elegant Chinese voice-dialogue robot / smart speaker, with LLM powered multi-turn conversation --- probably the first open-source smart speaker project supporting brain-computer interaction. Works out of the box on Raspberry Pi and many other platforms.
+\item \textbf{Features}: Highly modularize and extensible. You can switch ASR engine and TTS engine simply by modify the config file, and you can easily write your own skills to extend the ability of the robot. Supports Muse headset-based brain-computer wake-up. Allows controlling you smart devices with HomeAssistant. A backend server is also provided, with open restful APIs.
+\item \textbf{Stats}: 7,100+ stars, 1,400+ forks, 175 watchers. Clips of the code were featured in a hit TV series.
 \end{itemize}}
 
 \tlcventry{2014}{2013}{\href{http://github.com/wzpan/qtevm}{QtEVM}}{Author}{}{}%
@@ -78,7 +112,7 @@
 \begin{itemize}
 \item \textbf{Abstract}: Open source implementation for \href{http://people.csail.mit.edu/mrub/vidmag/}{EVM(Eulerian Video Magnification)}.
 \item \textbf{Features}: The first open-source completed C++ implementation for EVM, which supports both motion and color magnification.
-\item \textbf{Stats}: 114 stars, 46 forks.
+\item \textbf{Stats}: 178 stars, 67 forks.
 \end{itemize}}
 
 \tlcventry{2014}{2013}{\href{http://github.com/wzpan/hexo-theme-freemind}{hexo-theme-freemind}}{Author}{}{}%
@@ -86,7 +120,7 @@
 \begin{itemize}
 \item \textbf{Abstract}: One of the most popular theme for \href{hexo.io}{Hexo}.
 \item \textbf{Features}: Luxuriant tag plugins so as to get the power of Twitter Bootstrap with minimal hassle.
-\item \textbf{Stats}: 366 stars, 147 forks.
+\item \textbf{Stats}: 411 stars, 145 forks.
 \end{itemize}}
 
 \section{Awards}
@@ -96,26 +130,11 @@
 
 {
 
-\tldatelabelcventry{2015}{2015.10}{Distinguished Contribution Award}{Pingan}{}{}{}
+\tlcventry{2017}{0}{Outstanding Employee Award ($\times 7$), Outstanding Performance Award ($\times 4$), Excellent R\&D Award, Domain Outstanding Project Award, Technical Influence Award (individual), User Reputation Award, Code Leap Award, Social-line STAR Award ($\times 2$), PGM Flash Award ``Super Coding Power Award'', SNG ``Super Ma-Li'' Award, multiple BG-level / department-level project awards}{Tencent}{}{}{}
 
-\setlength{\parskip}{-20pt}
+\tlcventry{2016}{2015}{Annual Outstanding Employee, Distinguished Contribution Award, ``Innovation Employee'' Award, Bi-weekly Innovation Award, Project Award ($\times 1$), Tool Award ($\times 2$), Innovation Award ($\times 4$)}{Pingan}{}{}{}
 
-\tldatelabelcventry{2015}{2015.10}{Innovation Award}{Pingan}{}{}{}
-
-\setlength{\parskip}{-20pt}
-
-\tldatelabelcventry{2013}{2013.10}{National Scholarship}{South
-  China Normal University}{}{}{}
-
-\setlength{\parskip}{-20pt}
-
-\tldatelabelcventry{2011}{2011.10}{Silver Prize}{the 12th Challenge Cup of
-  National College Students' Academic Works}{}{}{}
-
-\tldatelabelcventry{2011}{2011.6}{Outstanding Graduate \& Dissertation}{South
-  China Normal University}{}{}{}
-
-\setlength{\parskip}{-10pt}
+\tlcventry{2013}{2011}{National Scholarship, Silver Prize of the 12th ``Challenge Cup'' National College Students' Academic Science \& Technology Competition, Outstanding Graduate \& Outstanding Dissertation}{National / University}{}{}{}
 
 \tlcventry{2012}{2008}{1st Grade Scholarship($\times$ 2), 2nd
   Grade Scholarship($\times$ 2), Innovation Scholarship}{South China

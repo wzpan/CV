@@ -16,15 +16,21 @@
 \xeCJKsetcharclass{"0}{"2E7F}{0}
 \xeCJKsetcharclass{"2E80}{"FFFF}{1}
 
-\setCJKfamilyfont{song}{SimSun}
-\setCJKfamilyfont{hei}{SimHei}
-\setCJKfamilyfont{pan}{YaHei Consolas Hybrid}
-\setCJKfamilyfont{weizhou}{YaHei Consolas Hybrid}
-\setCJKfamilyfont{fs}{FangSong}
-\setCJKfamilyfont{kai}{KaiTi}
-\setCJKfamilyfont{li}{LiSu}
-\setCJKfamilyfont{you}{YouYuan}
-\setCJKfamilyfont{githubfont}{Octicons}
+% Fallback-aware font selection: use the original Adobe/Windows fonts when
+% they are installed on the build machine, otherwise fall back to the
+% closest equivalent fonts available on macOS.
+\newcommand*{\cjkfamilyfontfallback}[3]{%
+  \IfFontExistsTF{#2}{\setCJKfamilyfont{#1}{#2}}{\setCJKfamilyfont{#1}{#3}}}
+
+\cjkfamilyfontfallback{song}{SimSun}{Songti SC}
+\cjkfamilyfontfallback{hei}{SimHei}{Heiti SC}
+\cjkfamilyfontfallback{pan}{YaHei Consolas Hybrid}{Microsoft YaHei}
+\cjkfamilyfontfallback{weizhou}{YaHei Consolas Hybrid}{Microsoft YaHei}
+\cjkfamilyfontfallback{fs}{FangSong}{Songti SC}
+\cjkfamilyfontfallback{kai}{KaiTi}{Songti SC}
+\cjkfamilyfontfallback{li}{LiSu}{Songti SC}
+\cjkfamilyfontfallback{you}{YouYuan}{Heiti SC}
+\cjkfamilyfontfallback{githubfont}{Octicons}{Octicons}
 
 \newcommand{\song}{\CJKfamily{song}}
 \newcommand{\fs}{\CJKfamily{fs}}
@@ -89,7 +95,7 @@
 % personal data
 \familyname{\weizhou 伟洲}
 \firstname{\pan 潘}
-\mobile{+86 185 XXXX XXXX}
+\mobile{+86 XXX XXXX XXXX}
 %\phone{+33 (0) 456 753 683}
 %\fax{fax (optional)}                          % optional, remove the line if not wanted
 \email{m@hahack.com}
