@@ -36,16 +36,33 @@
     currently algorithm owner of the XiaoQ AI assistant, owner of AI scenario exploration in
     QQ Technology Committee, and lead of Algorithm Group I --- managing 7 algorithm and 6 engineering members.
   \item Tech owner of \textsl{QPilot}, QQ's AI Agent platform --- algorithms, architecture,
-    product and operations; built v1.0 from scratch with a 5-person team; now QQ's one-stop AI foundation.
-  \item Self-developed the QPilot model family: \textbf{funcall} tool-calling model (CoT + SFT + DPO),
+    product and operations; built v1.0 from scratch with a 5-person team; now QQ's one-stop AI foundation:
+    self-developed the QPilot model family --- \textbf{funcall} tool-calling model (CoT + SFT + DPO),
     single-turn accuracy 87.22\%$\rightarrow$95.49\% and multi-turn 65.31\%$\rightarrow$90.81\% on business benchmarks;
     \textbf{wiki} knowledge-base Q\&A (the earliest in-house iWiki RAG solution), pass rate 62\%$\rightarrow$98\%,
     480k+ knowledge-base Q\&A and 2,890 derived assistants; \textbf{code} Chinese coding model,
     incremental pre-training brought ArkTS (HarmonyOS) completion to SOTA and lifted AICR review
-    positive-feedback rate 8.55\%$\rightarrow$49.85\% across 600+ projects and 610k CR tasks.
-  \item Designed the Ops architecture of ``multiple creation views + one unified API'' to avoid
+    positive-feedback rate 8.55\%$\rightarrow$49.85\% across 600+ projects and 610k CR tasks;
+    designed the Ops architecture of ``multiple creation views + one unified API'' to avoid
     experience breakage across models: 270M+ API calls in 2024, covering 845 departments /
     2,674 teams with 6,500+ public agents.
+  \item Tech owner and architect of Tencent ABCmouse (2018--2021): led the rewrite of the
+    top-selling US English-learning app for kids (30+ scenes, 7,000+ learning activities)
+    from a Hybrid architecture to a high-performance Cocos-based cross-platform solution
+    covering iOS, Android, Web and WeChat Mini Games;
+    scenario-based migration (video scenes to native, games to H5, the rest to Cocos);
+    diagnosed and fixed a Cocos engine \texttt{callStaticMethod} cross-layer JNI reference
+    leak that froze the app (official PR \#1178, merged upstream);
+    in-house hybrid texture compression (PVR/ETC2) cut per-texture memory by 75\%$\sim$87.5\%
+    and total memory 180MB$\rightarrow$50MB;
+    incremental compression tooling fixed the build-time cost, and a reference-counting
+    reclaimer fixed resource mis-release on scene switches;
+    built an end-to-end monitoring system (JS exception interception, daily alarms,
+    remote log fetching and hot updates);
+    delivered shared UI components, a cross-platform AudioPlayer, a high-performance
+    ScrollView and the \texttt{abchelper} one-stop project management tool.
+    Results: scene loading 10s$\rightarrow$1s, iOS package 400MB$\rightarrow$250MB and
+    Android 150MB$\rightarrow$100MB.
   \item 17 patents, 75 KM articles and 428 iWiki docs, with KM technical influence over 99\%; Tencent Excellent R\&D Award,
     Domain Outstanding Project Award and Technical Influence Award.
   \item Speaker of \href{https://www.infoq.cn/article/QXiWs69g24PMk0ldg1to}{GMTC 2018};

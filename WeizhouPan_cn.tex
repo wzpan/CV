@@ -13,7 +13,7 @@
 \usepackage{WeizhouPan}
 % \usepackage{amsmath, amssymb, latexsym}
 \usepackage[english]{babel}
-\linespread{0.9}
+\linespread{0.8}
 
 \IfFontExistsTF{Adobe Song Std}{%
   \setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti
@@ -43,6 +43,17 @@
 
 %\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
 %----------------------------------------------------------------------------------
+% 紧凑排版：内容增多后保持 2 页
+\geometry{top=1cm, bottom=1cm}
+\makeatletter
+\RenewDocumentCommand{\section}{sm}{%
+  \par\addvspace{1.2ex}%
+  \phantomsection{}%
+  \addcontentsline{toc}{section}{#2}%
+  \cvitem[0ex]{\strut\raggedleft\raisebox{\baseletterheight}{\color{color1}\rule{\hintscolumnwidth}{0.95ex}}}{\strut\sectionstyle{#2}}%
+  \par\nobreak\addvspace{0.5ex}\@afterheading}
+\makeatother
+
 %            content
 %----------------------------------------------------------------------------------
 

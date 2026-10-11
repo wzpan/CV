@@ -13,7 +13,7 @@
 \usepackage{WeizhouPan}
 \usepackage{amsmath, amssymb, latexsym}
 \usepackage[english]{babel}
-\linespread{0.9}
+\linespread{0.8}
 
 \IfFontExistsTF{Adobe Song Std}{%
   \setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti
@@ -42,6 +42,18 @@
 %\extrainfo{\octocat~\url{http://github.com/wzpan}}
 
 %\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+% 微调页边距：内容增多后保持 3 页
+\geometry{top=1cm, bottom=1cm}
+% 紧凑 section 间距：内容增多后保持 3 页
+\makeatletter
+\RenewDocumentCommand{\section}{sm}{%
+  \par\addvspace{1.2ex}%
+  \phantomsection{}%
+  \addcontentsline{toc}{section}{#2}%
+  \cvitem[0ex]{\strut\raggedleft\raisebox{\baseletterheight}{\color{color1}\rule{\hintscolumnwidth}{0.95ex}}}{\strut\sectionstyle{#2}}%
+  \par\nobreak\addvspace{0.5ex}\@afterheading}
+\makeatother
+
 %----------------------------------------------------------------------------------
 %            content
 %----------------------------------------------------------------------------------

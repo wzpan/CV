@@ -40,14 +40,25 @@
     多个海外项目（M8、M8 Lord、M9、W 等）技术负责人，现任小Q AI 助手算法负责人、
     QQ 技术委员会 AI 场景探索方向负责人及基础算法一组组长，实线管理算法岗 7 人，开发岗 6 人；
   \item QQ 团队 AI Agent 平台 QPilot 技术负责人，负责算法、架构设计、产品与运营，
-    带领 5 人团队从 0 到 1 完成第一个版本，使其成为 QQ 的一站式 AI 底座；
-  \item 自研 QPilot 系列模型：\textbf{funcall} 工具调用模型（CoT + SFT + DPO），业务评测集单轮
+    带领 5 人团队从 0 到 1 完成第一个版本，使其成为 QQ 的一站式 AI 底座：
+    自研 QPilot 系列模型——\textbf{funcall} 工具调用模型（CoT + SFT + DPO），业务评测集单轮
     准确率 87.22\%$\rightarrow$95.49\%、多轮准确率 65.31\%$\rightarrow$90.81\%；\textbf{wiki} 知识库问答方案
     （司内最早的 iWiki RAG 方案），业务数据集通过率 62\%$\rightarrow$98\%，累计知识库问答 48 万+次、
     衍生问答助手 2890 个；\textbf{code} 中文编程模型，通过增量预训练使鸿蒙 ArkTS 补全达到 SOTA，
     AICR 代码评审正反馈率 8.55\%$\rightarrow$49.85\%，覆盖 600+ 项目、61 万次 CR 任务；
-  \item 设计「多创建视图 + 统一 API」的 Ops 架构，规避多模型带来的体验破窗；2024 年平台
+    设计「多创建视图 + 统一 API」的 Ops 架构，规避多模型带来的体验破窗；2024 年平台
     API 调用超 2.7 亿次，覆盖司内 845 个部门、2674 个组，公开 Agent 6500+；
+  \item 腾讯开心鼠（ABCmouse，2018--2021）项目负责人、架构设计：主导将美国销量第一英语幼教
+    App（30+ 场景、7000+ 学习活动）从 Hybrid 架构重构为基于 Cocos 的高性能跨平台方案，
+    统一支持 iOS、Android、Web、微信小游戏四端；
+    分场景改造（视频类转 native、游戏类转 H5、其余转 Cocos）；
+    定位并修复 Cocos 引擎 \texttt{callStaticMethod} 跨层通信 JNI 引用泄漏导致的应用卡死问题
+    （官方 PR \#1178，已被引擎主线合并）；
+    自研混合纹理压缩（PVR/ETC2），单图内存降低 75\%$\sim$87.5\%、整包内存 180MB$\rightarrow$50MB，
+    增量压缩工具解决构建耗时，计数回收机制解决切场景资源误回收；
+    搭建全链路监控体系（JS Exception 拦截、日报告警、远程捞 log 与热更新）；
+    沉淀通用 UI 组件、多端 AudioPlayer、高性能 ScrollView 及 \texttt{abchelper} 一站式项目管理工具。
+    最终成果：场景加载 10s$\rightarrow$1s，iOS 包体 400MB$\rightarrow$250MB、Android 包体 150MB$\rightarrow$100MB。
   \item 专利 17 项，KM 文章 75 篇，iWiki 文档 428 篇，KM 技术影响力超 99\%；获腾讯卓越研发奖、领域优秀项目奖、技术影响力奖等。
   \item \href{https://www.infoq.cn/article/QXiWs69g24PMk0ldg1to}{2018 年 GMTC 全球大前端会议演讲嘉宾}；
     腾讯 Next 课堂《微信小游戏入门与实战》、《\href{https://ke.qq.com/course/350627?from=800004380}{使用 Cocos Creator 开发微信小游戏 2048}》、《\href{https://ke.qq.com/course/384790?tuin=1b8113f4}{Python 从入门到实战}》等课程主讲老师；腾讯课堂「薪选」课程等级评定专家团成员（客户端通道负责人）。
